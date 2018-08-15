@@ -2,7 +2,7 @@ library(data.table)
 library(dplyr)
 library(lubridate)
 
-dataset_path <- "/Users/siraj/projects/learning/datasciencecoursera/household_power_consumption.txt"
+dataset_path <- "household_power_consumption.txt"
 
 power_data <- fread(dataset_path, na.strings=getOption("datatable.na.strings","?"))
 power_data <- power_data %>% mutate(Date = dmy(Date)) %>% filter(Date >= "2007-02-01" & Date <= "2007-02-02")
